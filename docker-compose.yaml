@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  vue-app:
+    build:
+      context: .  # Répertoire de base pour la construction (votre répertoire de projet principal)
+      dockerfile: Docker/VueJs/Dockerfile
+    volumes:
+      - .:/app  # Monte le répertoire actuel dans /app dans le conteneur
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=development
