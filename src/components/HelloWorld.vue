@@ -1,15 +1,19 @@
 <template>
   <h1>Hello World</h1>
-  <p>je suis {{ name }} et j'ai {{ age }}</p>
+
+  <input v-model="nom" type="text" @input="handleUpdate" />
 </template>
 
 <script setup>
-import {defineProps} from 'vue';
+import { defineEmits, ref } from "vue";
 
-defineProps({
-  name: String,
-  age: Number,
-});
+const emit = defineEmits(["update"]);
+
+const nom = ref("");
+
+const handleUpdate = (event) => {
+  emit("update", event.target.value);
+};
 </script>
 
 <style></style>

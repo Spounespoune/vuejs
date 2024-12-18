@@ -21,3 +21,6 @@ status:
 
 vue:
 	docker exec -it vue-app bash
+
+eslint:
+	npx eslint --ext .js,.vue src --fix
